@@ -1,12 +1,19 @@
-import express, { Application } from 'express';
-
-const app : Application = express();
-
-app.get("/", (req, res) => {
-    res.send("hello")
-});
+import app from "./app";
+import config from "./config";
+import database from "./utils/database";
 
 
-app.listen(5000, () => {
-    console.log('Server is running at http://localhost:5000/');
-})
+const run = async() => {
+    try{
+        await database()
+        app.listen(config.port, () => {
+            console.log(`Server is running at ${config.port} `);
+        })
+
+    }catch(error){
+        console.log('Error: ', error);
+    }
+}
+
+run()
+
