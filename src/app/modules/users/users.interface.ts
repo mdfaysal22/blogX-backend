@@ -1,16 +1,13 @@
 import { Model } from "mongoose"
 
-export type IUser = {
+export interface IUser  {
     name: string,
     email: string,
     password: string,
-    role: Role
+    role?: string
 }
 
-enum Role {
-    Admin,
-    User,
-    Blogger
+export interface IUserLogin {
+    email: string,
+    password: string
 }
-
-export type usersModel = Model<IUser, Record<string , unknown>>

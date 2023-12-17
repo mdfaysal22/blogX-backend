@@ -5,6 +5,7 @@ import config from "../config";
 const database = async() => {
     if(config.database_url){
         await mongoose.connect(config.database_url);
+        console.log("DB Connected")
 
     }
     else{
