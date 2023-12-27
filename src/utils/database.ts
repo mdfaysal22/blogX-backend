@@ -1,12 +1,13 @@
 import mongoose from 'mongoose'
 import config from '../config'
+import { logger } from '../logger/logger'
 
 const database = async () => {
   if (config.database_url) {
     await mongoose.connect(config.database_url)
-    console.log('DB Connected')
+    logger.infoLogger.info('DB Connected')
   } else {
-    console.log('Database URL not founded !!')
+    logger.errorLogger.error('Database URL not founded !!')
   }
 }
 

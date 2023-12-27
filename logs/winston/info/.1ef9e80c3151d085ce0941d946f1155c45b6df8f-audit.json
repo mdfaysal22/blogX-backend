@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/apple/Desktop/project/blogX/logs/winston/info/.1ef9e80c3151d085ce0941d946f1155c45b6df8f-audit.json",
+    "files": [
+        {
+            "date": 1703665495001,
+            "name": "/Users/apple/Desktop/project/blogX/logs/winston/info/blogX-2023-12-27-14.log",
+            "hash": "cc3b05c9799be90baf21ae2da3d6c6ea622af89e3b67f98d960af62ff76d702f"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,33 +1,38 @@
 import { NextFunction, Request, Response } from 'express'
 import { userService } from './users.service'
+import catchAsync from '../../utils/catchAsync'
+import response from '../../utils/response'
+import httpStatus from 'http-status'
 
-const signup = async (req: Request, res: Response, next: NextFunction) => {
-  try {
+const signup = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body
     const result = await userService.signup(user)
-    res.status(200).json({
-      status: 200,
-      message: 'User create Success',
+
+    next()
+
+    response(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'User Create Successful',
       data: result,
     })
-  } catch (error) {
-    next(error)
-  }
-}
+  },
+)
 
-const login = async (req: Request, res: Response, next: NextFunction) => {
-  try {
+const login = catchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
     const user = req.body
     const result = await userService.login(user)
-    res.status(200).json({
-      status: 200,
-      message: 'Login Successful',
+    next()
+    response(res, {
+      statusCode: 200,
+      success: true,
+      message: 'Login successful',
       data: result,
     })
-  } catch (error) {
-    next(error)
-  }
-}
+  },
+)
 
 export const userController = {
   signup,

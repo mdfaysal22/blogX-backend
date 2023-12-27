@@ -1,15 +1,16 @@
 import app from './app'
 import config from './config'
+import { logger } from './logger/logger'
 import database from './utils/database'
 
 const run = async () => {
   try {
     await database()
     app.listen(config.port, () => {
-      console.log(`Server is running at ${config.port} `)
+      logger.infoLogger.info(`Server is running at ${config.port} `)
     })
   } catch (error) {
-    console.log('Error: ', error)
+    logger.errorLogger.error('Error: ', error)
   }
 }
 

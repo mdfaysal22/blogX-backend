@@ -1,4 +1,5 @@
 import config from '../../../config'
+import { logger } from '../../../logger/logger'
 import { IUser, IUserLogin } from './users.interface'
 import { User } from './users.model'
 import bcrypt from 'bcrypt'
@@ -16,7 +17,7 @@ const signup = async (user: IUser): Promise<IUser | null> => {
     const result = await User.create(user)
     return result
   } else {
-    console.log('User already exists')
+    logger.infoLogger.info('User already exists')
     return null
   }
 }
@@ -39,10 +40,10 @@ const login = async (user: IUserLogin) => {
       )
       return token
     } else {
-      console.log('Authentication Error')
+      logger.errorLogger.error('Authentication Error')
     }
   } else {
-    console.log('Authentication Error')
+    logger.errorLogger.error('Authentication Error')
   }
 }
 
