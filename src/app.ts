@@ -1,17 +1,17 @@
-import express, { Application } from 'express';
-import cors from 'cors';
-import router from './app/routes';
+import express, { Application } from 'express'
+import cors from 'cors'
+import router from './app/routes'
 
-const app : Application = express();
+const app: Application = express()
 
 app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
-app.get("/", (req, res) => {
-    res.send("hello")
-});
+app.get('/', (req, res) => {
+  res.send('hello')
+})
 
-app.use("/api/v2", router)
+app.use('/api/v2', router)
 
-export default app;
+export default app

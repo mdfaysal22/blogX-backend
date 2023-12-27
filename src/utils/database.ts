@@ -1,16 +1,13 @@
-import mongoose from "mongoose";
-import config from "../config";
+import mongoose from 'mongoose'
+import config from '../config'
 
-
-const database = async() => {
-    if(config.database_url){
-        await mongoose.connect(config.database_url);
-        console.log("DB Connected")
-
-    }
-    else{
-        console.log("Database URL not founded !!")
-    }
-};
+const database = async () => {
+  if (config.database_url) {
+    await mongoose.connect(config.database_url)
+    console.log('DB Connected')
+  } else {
+    console.log('Database URL not founded !!')
+  }
+}
 
 export default database

@@ -1,13 +1,11 @@
-import { Model } from "mongoose"
-
-export interface IUser  {
-    name: string,
-    email: string,
-    password: string,
-    role?: string
+export type IUser = {
+  name: string
+  email: string
+  password: string
+  role?: string
 }
 
-export interface IUserLogin {
-    email: string,
-    password: string
+export type IUserLogin = {
+  email: string
+  password: string
 }
