@@ -1,15 +1,15 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
-    },
-    "auditLog": "/Users/apple/Desktop/project/blogX/logs/winston/errors/.d65e8b162c5a3028f6e24b56e0605bc22f2c4140-audit.json",
-    "files": [
-        {
-            "date": 1703665495005,
-            "name": "/Users/apple/Desktop/project/blogX/logs/winston/errors/blogX-2023-12-27-14-Error.log",
-            "hash": "afb94586b36a778e21ab34625db209dcc2d2487e5d4571e3145eea1d58b8be1a"
-        }
-    ],
-    "hashType": "sha256"
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/apple/Desktop/project/blogX/logs/winston/errors/.d65e8b162c5a3028f6e24b56e0605bc22f2c4140-audit.json",
+  "files": [
+    {
+      "date": 1703665495005,
+      "name": "/Users/apple/Desktop/project/blogX/logs/winston/errors/blogX-2023-12-27-14-Error.log",
+      "hash": "afb94586b36a778e21ab34625db209dcc2d2487e5d4571e3145eea1d58b8be1a"
+    }
+  ],
+  "hashType": "sha256"
 }
